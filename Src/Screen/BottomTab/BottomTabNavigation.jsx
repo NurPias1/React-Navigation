@@ -6,7 +6,7 @@ import Profile from '../Profile'
 import Settingspage from '../Settings'
 import { NavigationContainer } from '@react-navigation/native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import Fontisto from 'react-native-vector-icons/Fontisto'
+
 
 const Tab = createBottomTabNavigator()
 const BottomTabNavigation = () => {
@@ -28,10 +28,10 @@ const BottomTabNavigation = () => {
             return <Ionicons name={iconName} size={26} color={color} />
           },
           tabBarActiveTintColor: '#fff',
-
           tabBarInactiveTintColor: 'Black',
           tabBarInactiveBackgroundColor: '#32a1fd',
           tabBarActiveBackgroundColor: '#19507e',
+         
         })}
       >
         <Tab.Screen name="Home" component={Home} />
