@@ -6,6 +6,7 @@ import Profile from '../Profile'
 import Settingspage from '../Settings'
 import { NavigationContainer } from '@react-navigation/native'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import Fontisto from 'react-native-vector-icons/Fontisto'
 
 const Tab = createBottomTabNavigator()
 const BottomTabNavigation = () => {
@@ -16,26 +17,30 @@ const BottomTabNavigation = () => {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName
             if (route.name === 'Home') {
-              iconName = focused
-                ? 'ios-information-circle'
-                : 'ios-information-circle-outline'
+              iconName = focused ? 'home' : 'home-outline'
             } else if (route.name === 'Profile') {
-              iconName = focused ? 'ios-list' : 'ios-list-outline'
+              iconName = focused ? 'happy-outline' : 'happy'
             } else if (route.name === 'Settings') {
-              iconName = focused ? 'ios-list' : 'ios-list-outline'
+              iconName = focused ? 'settings' : 'settings-outline'
             }
 
             // You can return any component that you like here!
             return <Ionicons name={iconName} size={26} color={color} />
           },
-          tabBarActiveTintColor: 'green',
+          tabBarActiveTintColor: '#fff',
 
           tabBarInactiveTintColor: 'Black',
+          tabBarInactiveBackgroundColor: '#32a1fd',
+          tabBarActiveBackgroundColor: '#19507e',
         })}
       >
-        <Tab.Screen name="Home" component={Home} options={{}} />
-        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Settings" component={Settingspage} />
+        <Tab.Screen
+          name="Profile"
+          component={Profile}
+          options={{ tabBarBadge: 3 }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   )
